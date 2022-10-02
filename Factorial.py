@@ -1,22 +1,13 @@
-import sys
+num = 7
 
 
-def factorial(num: int):
-    if num >= 1:
-        return num * factorial(num - 1)
+factorial = 1
 
-    else:
-        return 1
-
-
-try:
-    n = int(input("Enter a number to calculate it's factorial: "))
-
-except ValueError:
-    print("Please enter an integer!")
-    sys.exit()
-
-if n < 0:
-    print("Please enter a positive integer!")
+if num < 0:
+    print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+    print("The factorial of 0 is 1")
 else:
-    print(f"The factorial of {n} is: {factorial(n)}")
+    for i in range(1, num + 1):
+        factorial = factorial * i
+    print("The factorial of", num, "is", factorial)
